@@ -19,10 +19,18 @@ public class ServletExController  {
         //Exception 터진건 서블릿 컨테이너는 무조건 500으로 내보낸다. // 내가 직접 예외 상태코드랑 HTTP 상태코드를 작성하는 방법도 있다.
     }
 
+
+    @GetMapping("/error-400")
+    public void error400(HttpServletResponse response) throws IOException {
+        response.sendError(400, "400 오류 !");        // F12 의 Status 확인 msg는 지금 안보인다.
+    }
+
     @GetMapping("/error-404")
     public void error404(HttpServletResponse response) throws IOException {
         response.sendError(404, "404 오류 !");        // F12 의 Status 확인 msg는 지금 안보인다.
     }
+
+
 
     @GetMapping("/error-500")
     public void error500(HttpServletResponse response) throws IOException {
