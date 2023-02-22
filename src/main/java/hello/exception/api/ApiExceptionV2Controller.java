@@ -21,7 +21,7 @@ public class ApiExceptionV2Controller {
     @ExceptionHandler(IllegalArgumentException.class)
     public ErrorResult illegalExHandler(IllegalArgumentException e) {
         log.error("[exceptionHandler] ex ", e);
-        return new ErrorResult("BAD", e.getMessage());
+        return new ErrorResult("BAD", e.getMessage());          //@RestController였기에 응답이 JSON으로 나간것.
     }
 
     @ExceptionHandler//(UserException.class) 해줘도 되는데, 아래 그냥 파라미터로 받아도 된다. 똑같다.
