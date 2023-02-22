@@ -54,7 +54,7 @@ public class ErrorPageController {
         result.put("message", ex.getMessage());          //우리가 던졌던 "잘못된 사용자"
 
         //Http  상태 코드를 정의해주자
-        Integer statusCode = (Integer)request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);//숫자 코드라 정수로 받을 수 있음.
+        Integer statusCode = (Integer)request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);//숫자 코드라 정수로 받을 수 있음.//The value of the attribute is of type java.lang.Integer.
         return new ResponseEntity<>(result, HttpStatus.valueOf(statusCode));        //상태코드, HttpStatus의 valueof메소드      //다시 JSON으로 리턴
     }
 
