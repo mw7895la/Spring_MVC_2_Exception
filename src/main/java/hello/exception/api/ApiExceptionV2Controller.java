@@ -17,6 +17,11 @@ public class ApiExceptionV2Controller {
     //그리고 안에 로직대로 호출이 되는데 이 컨트롤러는 @RestController라 ErrorResult가 그대로 JSON으로 반환이 된다.
     //@ExceptionHandler 은 여기 컨트롤러에서 발생한 예외만 적용된다 다른 컨트롤러 상관 없다. 그래서 아래 getMember() 메소드를 복사해서 가져온 것.
 
+/*
+    @ResponseStatus를 예외에서 사용할 때는 sendError에 code와 reason을 넣어서 동작하고,
+    컨트롤러나 @ExceptionHandler에서 사용할 때는 단순히 상태코드를 변경하는 방식으로 동작합니다.
+*/
+
 /*    @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(IllegalArgumentException.class)
     public ErrorResult illegalExHandler(IllegalArgumentException e) {
